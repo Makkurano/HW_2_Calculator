@@ -17,7 +17,7 @@
 
     <include
         android:id="@+id/include2"
-        layout="@layout/hw_2_calculator_signs"
+        layout="@layout/hw2_calculator_signs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
