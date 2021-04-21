@@ -5,15 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <EditText
+    <TextView
         android:id="@+id/calculator_monitor"
         android:layout_gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="number"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:text="@string/empty_monitor" />
-
+        android:textSize="@dimen/monitor_text"/>
 </com.google.android.material.circularreveal.CircularRevealFrameLayout>
