@@ -13,8 +13,9 @@
     <string name="button_minus">-</string>
     <string name="button_plus">+</string>
     <string name="button_multiplication">*</string>
-    <string name="button_division">\</string>
+    <string name="button_division">/</string>
     <string name="button_equals">=</string>
     <string name="button_dot">.</string>
     <string name="empty_monitor">0</string>
+    <string name="button_c">C</string>
 </resources>

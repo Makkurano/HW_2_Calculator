@@ -1,31 +1,20 @@
 package com.example.hw_2_calculator;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
-import java.util.Locale;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Inters inters;
-    private TextView textMonitor;
+    float argOne, argTwo;
+    boolean plus, minus, multiplication, division;
 
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        inters = new Inters();
-        initView();
-    }
-    private void initView() {
-        textMonitor = findViewById(R.id.calculator_monitor);
-        initButton2ClickListener();
-    }
-
-    private void initButton2ClickListener() {
+        EditText editText;
 
         Button button0 = findViewById(R.id.button_0);
         Button button1 = findViewById(R.id.button_1);
@@ -37,23 +26,165 @@ public class MainActivity extends AppCompatActivity {
         Button button7 = findViewById(R.id.button_7);
         Button button8 = findViewById(R.id.button_8);
         Button button9 = findViewById(R.id.button_9);
+        Button buttonDot = findViewById(R.id.button_dot);
         Button buttonMinus = findViewById(R.id.button_minus);
         Button buttonPlus = findViewById(R.id.button_plus);
         Button buttonMultiplication = findViewById(R.id.button_multiplication);
         Button buttonDivision = findViewById(R.id.button_division);
         Button buttonEquals = findViewById(R.id.button_equals);
+        Button buttonClean = findViewById(R.id.button_clean);
+        editText = (EditText) findViewById(R.id.calculator_monitor);
+
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editText.setText(editText.getText() + "1");
+            }
+        });
 
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                inters.incrementInter1();
-                setTextCounter(textMonitor, inters.getInter1());
+                editText.setText(editText.getText() + "2");
             }
         });
-    }
 
-    private void setTextCounter(TextView textMonitor, int inter){
-        textMonitor.setText(String.format(Locale.getDefault(), "%d", inter));
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editText.setText(editText.getText() + "3");
+            }
+        });
+
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editText.setText(editText.getText() + "4");
+            }
+        });
+
+        button5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editText.setText(editText.getText() + "5");
+            }
+        });
+
+        button6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editText.setText(editText.getText() + "6");
+            }
+        });
+
+        button7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editText.setText(editText.getText() + "7");
+            }
+        });
+
+        button8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editText.setText(editText.getText() + "8");
+            }
+        });
+
+        button9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editText.setText(editText.getText() + "9");
+            }
+        });
+
+        button0.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editText.setText(editText.getText() + "0");
+            }
+        });
+
+        buttonPlus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (editText == null) {
+                    editText.setText("");
+                } else {
+                    argOne = Float.parseFloat(editText.getText() + "");
+                    plus = true;
+                    editText.setText(null);
+                }
+            }
+        });
+
+        buttonMinus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                argOne = Float.parseFloat(editText.getText() + "");
+                minus = true;
+                editText.setText(null);
+            }
+        });
+
+        buttonMultiplication.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                argOne = Float.parseFloat(editText.getText() + "");
+                multiplication = true;
+                editText.setText(null);
+            }
+        });
+
+        buttonDivision.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                argOne = Float.parseFloat(editText.getText() + "");
+                division = true;
+                editText.setText(null);
+            }
+        });
+
+        buttonEquals.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                argTwo = Float.parseFloat(editText.getText() + "");
+
+                if (plus) {
+                    editText.setText(argOne + argTwo + "");
+                    plus = false;
+                }
+
+                if (minus) {
+                    editText.setText(argOne - argTwo + "");
+                    minus = false;
+                }
+
+                if (multiplication) {
+                    editText.setText(argOne * argTwo + "");
+                    multiplication = false;
+                }
+
+                if (division) {
+                    editText.setText(argOne / argTwo + "");
+                    division = false;
+                }
+            }
+        });
+        buttonClean.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editText.setText("");
+            }
+        });
+
+        buttonDot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editText.setText(editText.getText() + ".");
+            }
+        });
     }
 }
 
