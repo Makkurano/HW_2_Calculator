@@ -10,18 +10,18 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Counters counters;
-    private TextView textCounter;
+    private Inters inters;
+    private TextView textMonitor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        counters = new Counters();
+        inters = new Inters();
         initView();
     }
     private void initView() {
-        textCounter = findViewById(R.id.calculator_monitor);
+        textMonitor = findViewById(R.id.calculator_monitor);
         initButton2ClickListener();
     }
 
@@ -46,14 +46,14 @@ public class MainActivity extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                counters.incrementCounter2();
-                setTextCounter(textCounter, counters.getInter2());
+                inters.incrementInter1();
+                setTextCounter(textMonitor, inters.getInter1());
             }
         });
     }
 
-    private void setTextCounter(TextView textCounter, int counter){
-        textCounter.setText(String.format(Locale.getDefault(), "%d", counter));
+    private void setTextCounter(TextView textMonitor, int inter){
+        textMonitor.setText(String.format(Locale.getDefault(), "%d", inter));
     }
 }
 
