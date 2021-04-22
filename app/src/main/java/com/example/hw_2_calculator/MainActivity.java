@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
                 if (editText == null) {
                     editText.setText("");
                 } else {
-                    argOne = Float.parseFloat(editText.getText() + "");
+                    argOne = Float.parseFloat(String.valueOf(editText.getText()));
                     plus = true;
                     editText.setText(null);
                 }
@@ -122,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
         buttonMinus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                argOne = Float.parseFloat(editText.getText() + "");
+                argOne = Float.parseFloat(String.valueOf(editText.getText()));
                 minus = true;
                 editText.setText(null);
             }
@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
         buttonMultiplication.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                argOne = Float.parseFloat(editText.getText() + "");
+                argOne = Float.parseFloat(String.valueOf(editText.getText()));
                 multiplication = true;
                 editText.setText(null);
             }
@@ -140,16 +140,23 @@ public class MainActivity extends AppCompatActivity {
         buttonDivision.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                argOne = Float.parseFloat(editText.getText() + "");
+                argOne = Float.parseFloat(String.valueOf(editText.getText()));
                 division = true;
                 editText.setText(null);
+            }
+        });
+
+        buttonDot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editText.setText(editText.getText() + ".");
             }
         });
 
         buttonEquals.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                argTwo = Float.parseFloat(editText.getText() + "");
+                argTwo = Float.parseFloat(String.valueOf(editText.getText()));
 
                 if (plus) {
                     editText.setText(argOne + argTwo + "");
@@ -172,17 +179,11 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
         buttonClean.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 editText.setText("");
-            }
-        });
-
-        buttonDot.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                editText.setText(editText.getText() + ".");
             }
         });
     }
