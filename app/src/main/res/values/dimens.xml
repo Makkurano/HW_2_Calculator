@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="button_text">20sp</dimen>
-    <dimen name="monitor_text">40sp</dimen>s
+    <dimen name="monitor_text">40sp</dimen>
+    <dimen name="margin">10dp</dimen>
 </resources>

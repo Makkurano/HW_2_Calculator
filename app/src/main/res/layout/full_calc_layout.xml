@@ -39,5 +39,5 @@
     android:text="@string/button_c"
     android:textSize="@dimen/button_text"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/include2"/>
+    app:layout_constraintTop_toBottomOf="@id/include1"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

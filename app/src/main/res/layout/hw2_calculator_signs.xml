@@ -1,20 +1,22 @@
-<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<com.google.android.material.circularreveal.CircularRevealGridLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
     android:orientation="vertical"
-    android:columnCount="4">
+    android:columnCount="4"
+    style="@style/HW3">
 
     <Button
         android:id="@+id/button_minus"
-        style="@style/Widget.MaterialComponents.Button"
+        style="@style/HW3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_minus"
         android:textSize="@dimen/button_text" />
     <Button
         android:id="@+id/button_plus"
+        style="@style/HW3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_plus"
@@ -22,15 +24,17 @@
 
     <Button
         android:id="@+id/button_multiplication"
+        style="@style/HW3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_multiplication"
         android:textSize="@dimen/button_text" />
     <Button
         android:id="@+id/button_division"
+        style="@style/HW3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_division"
         android:textSize="@dimen/button_text" />
 
-</GridLayout>
+</com.google.android.material.circularreveal.CircularRevealGridLayout>
