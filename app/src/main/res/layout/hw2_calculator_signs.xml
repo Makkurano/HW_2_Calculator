@@ -7,14 +7,14 @@
     android:columnCount="4"
     style="@style/HW3">
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_minus"
         style="@style/HW3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_minus"
         android:textSize="@dimen/button_text" />
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_plus"
         style="@style/HW3"
         android:layout_width="wrap_content"
@@ -22,14 +22,14 @@
         android:text="@string/button_plus"
         android:textSize="@dimen/button_text" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_multiplication"
         style="@style/HW3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_multiplication"
         android:textSize="@dimen/button_text" />
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_division"
         style="@style/HW3"
         android:layout_width="wrap_content"

@@ -4,13 +4,14 @@
     android:visibility="visible"
     android:layout_gravity="center"
     android:layout_height="wrap_content"
-    android:layout_width="wrap_content">
+    android:layout_width="wrap_content"
+    style="@style/HW3"
+    android:backgroundTint="@color/back">
 
     <include
         android:id="@+id/full_calc_layout"
         layout="@layout/full_calc_layout"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        />
+        android:layout_height="wrap_content" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

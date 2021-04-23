@@ -5,11 +5,12 @@
     android:layout_height="match_parent"
     style="@style/HW3">
 
-    <EditText
+    <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/calculator_monitor"
         android:layout_gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="@dimen/monitor_text"
+        android:textColor="@color/turquoise"
         style="@style/HW3"/>
 </com.google.android.material.circularreveal.CircularRevealFrameLayout>

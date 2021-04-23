@@ -10,4 +10,6 @@
     <color name="orange">#FFD700</color>
     <color name="darkOrchid">#9932CC</color>
     <color name="turquoise">#40E0D0</color>
+    <color name="back">#ffcc99</color>
+    <color name="buttons">#9CD3EA</color>
 </resources>
