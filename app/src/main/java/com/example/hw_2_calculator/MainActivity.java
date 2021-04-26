@@ -8,21 +8,12 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String NameSharedPreference = "STYLE";
-
-    private static final String appTheme = "APP_THEME";
-
-    private static final int HW3Style = 0;
-    private static final int DefaultStyle = 1;
-
     float argOne, argTwo;
     boolean plus, minus, multiplication, division;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTheme(getAppTheme(R.style.HW3Style));
         setContentView(R.layout.activity_main);
-        initThemeChooser();
         EditText editText;
 
         Button button0 = findViewById(R.id.button_0);
