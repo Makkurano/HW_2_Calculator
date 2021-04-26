@@ -19,4 +19,6 @@
     <string name="empty_monitor">0</string>
     <string name="button_c">C</string>
     <string name="first_screen_zero">0</string>
+    <string name="result_template">%s%s</string>
+
 </resources>
