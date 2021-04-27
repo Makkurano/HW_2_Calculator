@@ -11,22 +11,24 @@ public class MainActivity extends AppCompatActivity {
 
     float argOne, argTwo;
     boolean plus, minus, multiplication, division;
+    private final int[] numberButtonIds = new int[]{R.id.button_0, R.id.button_1, R.id.button_2, R.id.button_3,
+            R.id.button_4, R.id.button_5, R.id.button_6, R.id.button_7, R.id.button_8, R.id.button_9};
+
+    EditText editText;
+
+    private void setNumberButtonListeners() {
+        for (int i = 0; i < numberButtonIds.length; i++) {
+            int index = i;
+            findViewById(numberButtonIds[i]).setOnClickListener(v -> editText.setText(editText.getText() + String.valueOf(index)));
+        }
+    }
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        EditText editText;
 
-        Button button0 = findViewById(R.id.button_0);
-        Button button1 = findViewById(R.id.button_1);
-        Button button2 = findViewById(R.id.button_2);
-        Button button3 = findViewById(R.id.button_3);
-        Button button4 = findViewById(R.id.button_4);
-        Button button5 = findViewById(R.id.button_5);
-        Button button6 = findViewById(R.id.button_6);
-        Button button7 = findViewById(R.id.button_7);
-        Button button8 = findViewById(R.id.button_8);
-        Button button9 = findViewById(R.id.button_9);
+        setNumberButtonListeners();
+
         Button buttonDot = findViewById(R.id.button_dot);
         Button buttonMinus = findViewById(R.id.button_minus);
         Button buttonPlus = findViewById(R.id.button_plus);
@@ -36,86 +38,7 @@ public class MainActivity extends AppCompatActivity {
         Button buttonClean = findViewById(R.id.button_clean);
         editText = (EditText) findViewById(R.id.calculator_monitor);
 
-        button1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Editable strResult = editText.getText();
-                String btnString = ((Button) button1).getText().toString();
-                editText.setText(getResources().getString(R.string.result_template, strResult, btnString));
-            }
-        });
 
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Editable strResult = editText.getText();
-                String btnString = ((Button) button2).getText().toString();
-                editText.setText(getResources().getString(R.string.result_template, strResult, btnString));            }
-        });
-
-        button3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Editable strResult = editText.getText();
-                String btnString = ((Button) button3).getText().toString();
-                editText.setText(getResources().getString(R.string.result_template, strResult, btnString));            }
-        });
-
-        button4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Editable strResult = editText.getText();
-                String btnString = ((Button) button4).getText().toString();
-                editText.setText(getResources().getString(R.string.result_template, strResult, btnString));            }
-        });
-
-        button5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Editable strResult = editText.getText();
-                String btnString = ((Button) button5).getText().toString();
-                editText.setText(getResources().getString(R.string.result_template, strResult, btnString));            }
-        });
-
-        button6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Editable strResult = editText.getText();
-                String btnString = ((Button) button6).getText().toString();
-                editText.setText(getResources().getString(R.string.result_template, strResult, btnString));            }
-        });
-
-        button7.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Editable strResult = editText.getText();
-                String btnString = ((Button) button7).getText().toString();
-                editText.setText(getResources().getString(R.string.result_template, strResult, btnString));            }
-        });
-
-        button8.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Editable strResult = editText.getText();
-                String btnString = ((Button) button8).getText().toString();
-                editText.setText(getResources().getString(R.string.result_template, strResult, btnString));            }
-        });
-
-        button9.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Editable strResult = editText.getText();
-                String btnString = ((Button) button9).getText().toString();
-                editText.setText(getResources().getString(R.string.result_template, strResult, btnString));            }
-        });
-
-        button0.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Editable strResult = editText.getText();
-                String btnString = ((Button) button0).getText().toString();
-                editText.setText(getResources().getString(R.string.result_template, strResult, btnString));            }
-        });
 
         buttonPlus.setOnClickListener(new View.OnClickListener() {
             @Override
