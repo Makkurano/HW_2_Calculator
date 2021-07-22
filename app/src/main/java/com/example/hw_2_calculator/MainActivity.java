@@ -2,8 +2,6 @@ package com.example.hw_2_calculator;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Editable;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -19,7 +17,8 @@ public class MainActivity extends AppCompatActivity {
     private void setNumberButtonListeners() {
         for (int i = 0; i < numberButtonIds.length; i++) {
             int index = i;
-            findViewById(numberButtonIds[i]).setOnClickListener(v -> editText.setText(editText.getText() + String.valueOf(index)));
+            findViewById(numberButtonIds[i]).setOnClickListener(v -> editText.setText
+                    (editText.getText() + String.valueOf(index)));
         }
     }
 
@@ -37,8 +36,6 @@ public class MainActivity extends AppCompatActivity {
         Button buttonEquals = findViewById(R.id.button_equals);
         Button buttonClean = findViewById(R.id.button_clean);
         editText = (EditText) findViewById(R.id.calculator_monitor);
-
-
 
         buttonPlus.setOnClickListener(v -> {
                 if (editText == null) {
