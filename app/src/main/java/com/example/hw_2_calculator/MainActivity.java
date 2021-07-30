@@ -100,9 +100,7 @@ public class MainActivity extends AppCompatActivity {
 
         buttonClean.setOnClickListener(v -> editText.setText("0"));
 
-        buttonDot.setOnClickListener(v -> {
-            editText.setText(editText.getText() + ".");
-        });
+        buttonDot.setOnClickListener(v -> editText.setText(editText.getText() + "."));
     }
 
     @Override

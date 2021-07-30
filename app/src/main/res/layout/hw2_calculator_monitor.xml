@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.circularreveal.CircularRevealFrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.circularreveal.CircularRevealFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/HW3"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    style="@style/HW3">
+    android:layout_height="match_parent">
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/calculator_monitor"
-        android:layout_gravity="center"
+        style="@style/HW3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/monitor_text_size"
-        android:textColor="@color/turquoise"
+        android:layout_gravity="center"
         android:text="@string/monitor_zero"
-        style="@style/HW3"/>
+        android:textColor="@color/turquoise"
+        android:textSize="@dimen/monitor_text_size" />
 </com.google.android.material.circularreveal.CircularRevealFrameLayout>
