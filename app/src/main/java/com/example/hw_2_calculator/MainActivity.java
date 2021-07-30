@@ -1,9 +1,13 @@
 package com.example.hw_2_calculator;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.widget.Button;
 import android.widget.EditText;
+
+import java.text.MessageFormat;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         setNumberButtonListeners();
 
         Button buttonDot = findViewById(R.id.button_dot);
@@ -69,22 +72,22 @@ public class MainActivity extends AppCompatActivity {
                 argTwo = Float.parseFloat(String.valueOf(editText.getText()));
 
                 if (plus) {
-                    editText.setText(argOne + argTwo + "");
+                    editText.setText(String.format("%s", argOne + argTwo));
                     plus = false;
                 }
 
                 if (minus) {
-                    editText.setText(argOne - argTwo + "");
+                    editText.setText(MessageFormat.format("{0}", argOne + argTwo));
                     minus = false;
                 }
 
                 if (multiplication) {
-                    editText.setText(argOne * argTwo + "");
+                    editText.setText(String.format(new StringBuilder().append(argOne + argTwo).append("").toString()));
                     multiplication = false;
                 }
 
                 if (division) {
-                    editText.setText(argOne / argTwo + "");
+                    editText.setText(String.format("%s", argOne + argTwo));
                     division = false;
                 }
         });
@@ -92,6 +95,16 @@ public class MainActivity extends AppCompatActivity {
         buttonClean.setOnClickListener(v -> {
                 editText.setText("");
         });
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
     }
 }
 
