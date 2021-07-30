@@ -21,5 +21,7 @@
     <string name="first_screen_zero">0</string>
     <string name="result_template">%s%s</string>
     <string name="monitor_zero">0</string>
+    <string name="string_dot">.</string>
+
 
 </resources>
