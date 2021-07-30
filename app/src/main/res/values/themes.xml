@@ -12,7 +12,7 @@
     <style name="HW3" parent="Theme.HW_2_Calculator">
         <item name="colorPrimaryVariant">@color/darkOrchid</item>
         <item name="colorPrimary">@color/darkOrchid</item>
-        <item name="android:textSize">@dimen/button_text</item>
+        <item name="android:textSize">@dimen/button_text_size</item>
         <item name="android:textColor">@color/black</item>
         <item name="colorSecondary">@color/orange</item>
         <item name="android:textStyle">bold</item>

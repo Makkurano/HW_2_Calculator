@@ -10,7 +10,8 @@
         android:layout_gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/monitor_text"
+        android:textSize="@dimen/monitor_text_size"
         android:textColor="@color/turquoise"
+        android:text="@string/monitor_zero"
         style="@style/HW3"/>
 </com.google.android.material.circularreveal.CircularRevealFrameLayout>

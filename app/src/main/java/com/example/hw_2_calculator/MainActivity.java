@@ -1,12 +1,9 @@
 package com.example.hw_2_calculator;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.widget.Button;
 import android.widget.EditText;
-
 import java.text.MessageFormat;
 
 public class MainActivity extends AppCompatActivity {
@@ -14,15 +11,19 @@ public class MainActivity extends AppCompatActivity {
     float argOne, argTwo;
     boolean plus, minus, multiplication, division;
     private final int[] numberButtonIds = new int[]{R.id.button_0, R.id.button_1, R.id.button_2, R.id.button_3,
-            R.id.button_4, R.id.button_5, R.id.button_6, R.id.button_7, R.id.button_8, R.id.button_9, R.id.button_dot};
+            R.id.button_4, R.id.button_5, R.id.button_6, R.id.button_7, R.id.button_8, R.id.button_9};
 
     EditText editText;
 
     private void setNumberButtonListeners() {
         for (int i = 0; i < numberButtonIds.length; i++) {
             int index = i;
-            findViewById(numberButtonIds[i]).setOnClickListener(v -> editText.setText
-                    (editText.getText() + String.valueOf(index)));
+            findViewById(numberButtonIds[i]).setOnClickListener(v -> {
+                if (editText.getText().equals("0")) {
+                    editText.setText("");
+                }
+                    editText.setText(editText.getText() + String.valueOf(index));
+            });
         }
     }
 
@@ -41,31 +42,27 @@ public class MainActivity extends AppCompatActivity {
         editText = (EditText) findViewById(R.id.calculator_monitor);
 
         buttonPlus.setOnClickListener(v -> {
-                if (editText == null) {
-                    editText.setText("");
-                } else {
                     argOne = Float.parseFloat(String.valueOf(editText.getText()));
                     plus = true;
-                    editText.setText(null);
-                }
+                    editText.setText("0");
         });
 
         buttonMinus.setOnClickListener(v -> {
-            argOne = Float.parseFloat(String.valueOf(editText.getText()));
-            minus = true;
-            editText.setText(null);
+                argOne = Float.parseFloat(String.valueOf(editText.getText()));
+                minus = true;
+                editText.setText("0");
         });
 
         buttonMultiplication.setOnClickListener(v -> {
                 argOne = Float.parseFloat(String.valueOf(editText.getText()));
                 multiplication = true;
-                editText.setText(null);
+                editText.setText("0");
         });
 
         buttonDivision.setOnClickListener(v -> {
                 argOne = Float.parseFloat(String.valueOf(editText.getText()));
                 division = true;
-                editText.setText(null);
+                editText.setText("0");
         });
 
         buttonEquals.setOnClickListener(v -> {
@@ -93,7 +90,11 @@ public class MainActivity extends AppCompatActivity {
         });
 
         buttonClean.setOnClickListener(v -> {
-                editText.setText("");
+                editText.setText("0");
+        });
+
+        buttonDot.setOnClickListener(v -> {
+            editText.setText(editText.getText() + ".");
         });
     }
 
