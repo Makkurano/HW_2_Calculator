@@ -77,17 +77,17 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 if (minus) {
-                    editText.setText(MessageFormat.format("{0}", argOne + argTwo));
+                    editText.setText(MessageFormat.format("{0}", argOne - argTwo));
                     minus = false;
                 }
 
                 if (multiplication) {
-                    editText.setText(String.format(new StringBuilder().append(argOne + argTwo).append("").toString()));
+                    editText.setText(String.format(new StringBuilder().append(argOne * argTwo).append("").toString()));
                     multiplication = false;
                 }
 
                 if (division) {
-                    editText.setText(String.format("%s", argOne + argTwo));
+                    editText.setText(String.format("%s", argOne / argTwo));
                     division = false;
                 }
         });
