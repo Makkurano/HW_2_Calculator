@@ -22,5 +22,9 @@
     <string name="result_template">%s%s</string>
     <string name="monitor_zero">0</string>
     <string name="string_dot">.</string>
+    <string name="nght_theme_text">Включение ночной темы</string>
+    <string name="night_mode">Night Mode</string>
+    <string name="settings_button">Settings</string>
+    <string name="save_button">Сохранить</string>
 
 </resources>
