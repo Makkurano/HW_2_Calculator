@@ -23,6 +23,7 @@
         android:text="@string/nght_theme_text"
         app:layout_constraintBottom_toTopOf="@+id/night_switch"
         tools:ignore="MissingConstraints"
+        android:textColor="@color/white"
         tools:layout_editor_absoluteX="47dp" />
 
     <com.google.android.material.button.MaterialButton

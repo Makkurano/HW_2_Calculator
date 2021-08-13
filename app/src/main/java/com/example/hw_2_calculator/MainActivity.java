@@ -2,10 +2,8 @@ package com.example.hw_2_calculator;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Switch;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -48,21 +46,18 @@ public class MainActivity extends AppCompatActivity {
         Button buttonEquals = findViewById(R.id.button_equals);
         Button buttonClean = findViewById(R.id.button_clean);
         editText = (EditText) findViewById(R.id.calculator_monitor);
-        Switch nightSwitch = (Switch) findViewById(R.id.night_switch);
         Button settings = findViewById(R.id.settings_button);
-        Button saveSettings = findViewById(R.id.save_button);
 
-        Intent nightMode = new Intent(MainActivity.this,SecondActivity.class);
-        settings.setOnClickListener(v -> startActivity(nightMode));
+        Intent nightMode = new Intent(MainActivity.this, SecondActivity.class);
+        settings.setOnClickListener(v -> {
+            startActivity(nightMode);
+        });
 
         buttonPlus.setOnClickListener(v -> {
             argOne = Float.parseFloat(String.valueOf(editText.getText()));
             plus = true;
             editText.setText("0");
         });
-
-
-
 
         buttonMinus.setOnClickListener(v -> {
             argOne = Float.parseFloat(String.valueOf(editText.getText()));
